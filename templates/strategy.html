@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1><a href="/">Stocks</a>
+        <i class="angle double right icon"></i>
+        {{ strategy.name }}
+    </h1>
+
+    <h2>Stocks</h2>
+    <table class="ui inverted table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
+   <!-- <td method="post" action="/remove_stock">
+                        <input type="submit" name="drop_stock" value="Remove"/>
+                             <select name="strategy_id">
+                                {% for strategy in strategies %}
+                                    <option value="{{ strategy.id}}">{{strategy.name}}</option> 
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="stock_id" value="{{ stock.id }}" /> 
+                        </td> -->
+                          
