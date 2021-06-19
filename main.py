@@ -146,19 +146,3 @@ def strategy(request: Request, strategy_id):
     return templates.TemplateResponse("strategy.html", {"request": request, "stocks": stocks, "strategy": strategy})
 
 
-# @app.post("/remove_stock")
-# def remove_stock(drop_stock: int = Form(...)):
-#     connection = sqlite3.connect(config.DB_FILE)
-#     cursor = connection.cursor()
-
-#     cursor.execute("""
-#         DELETE symbol, name
-#         FROM stock JOIN stock_strategy ON stock_strategy.stock_id = stock.id
-#         WHERE strategy_id = ?
-#         """, (strategy_id,))
-#     remove = cursor.removeone()
-        
-#     connection.commit()
-#     return RedirectResponse(url=f"/strategy/{strategy_id}", status_code=303, {"request": request, "remove": remove })
-
-    
